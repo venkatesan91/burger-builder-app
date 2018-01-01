@@ -74,6 +74,9 @@ class BurgerBuilder extends Component {
             {orderClicked : false}
         )
     }
+    orderContinueHandler = () => {
+        alert("continue...");
+    }
     render() {
         let disabledInfo = {...this.state.ingrediants};
         for(let key in disabledInfo) {
@@ -82,7 +85,10 @@ class BurgerBuilder extends Component {
         return(
             <Auxiliary>
                 <Modal orderClicked={this.state.orderClicked} modalClosed={this.modalCloseHandler}>
-                    <OrderSummary ingredients={this.state.ingrediants}/>
+                    <OrderSummary   ingredients={this.state.ingrediants}
+                                    orderContinue={this.orderContinueHandler}
+                                    orderCancel={this.modalCloseHandler}
+                                    price = {this.state.totalPrice}/>
                 </Modal>
                 <Burger ingrediants = {this.state.ingrediants}/>
                 <BuildControls  addIngredients={this.addIngredientsHandler} 

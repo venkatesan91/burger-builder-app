@@ -8,7 +8,7 @@ const burger = (props) => {
             transformedIngrediants.push(<BurgerIngredient key={key + i} type={key}/>);
     }
     if(transformedIngrediants.length === 0) {
-        transformedIngrediants.push(<p>Please start adding ingrediants</p>);
+        transformedIngrediants.push(<p key="123">Please start adding ingrediants</p>);
 
     }
     return(

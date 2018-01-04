@@ -6,6 +6,7 @@ class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         if(nextProps.orderClicked !== this.props.orderClicked)
             return true;
+        return false;
     }
     render() {
         return(
